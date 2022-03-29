@@ -1,5 +1,5 @@
 describe('Given an subject', () => {
-    describe('when activating', () => {
+    context('when activating', () => {
         beforeEach(() => {
             cy.on('uncaught:exception', () => false);
             cy.login('TechChallengeTeacher', 'P@ssw0rd');

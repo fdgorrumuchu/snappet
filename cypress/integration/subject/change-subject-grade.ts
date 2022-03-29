@@ -1,5 +1,5 @@
 describe('Given an subject', () => {
-    describe('when changing the grade of a subject', () => {
+    context('when changing the grade of a subject', () => {
         beforeEach(() => {
             cy.on('uncaught:exception', () => false);
             cy.login('TechChallengeTeacher', 'P@ssw0rd');
