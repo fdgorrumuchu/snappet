@@ -9,9 +9,10 @@ describe('Given an subject', () => {
             cy.changeSubjectGrade('Rekenen', 'Groep 6')
         });
         it('should update the subject grade', () => {
+            cy.findSubject('Rekenen').as('subject-item');
+            
             cy.changeSubjectGrade('Rekenen', 'Groep 7');
             
-            cy.findSubject('Rekenen').as('subject-item');
             cy.get('@subject-item').find('a:contains("Wijzig")').click();
             cy.get('@subject-item').find('.select2-selection').should('have.text', 'Groep 7');
             cy.get('@subject-item').find('button:contains("Annuleren")').click();
